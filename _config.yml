@@ -1,3 +1,0 @@
-destination:	_deploy
-exclude:	[_config.yml, stylesheet.scss, Gruntfile.js, node_modules, package.json, personalsite.sublime-project, personalsite.sublime-workspace]
-
