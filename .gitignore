@@ -13,5 +13,5 @@ node_modules/
 Gruntfile.js
 stevenacalhoun.github.io.sublime-project
 stevenacalhoun.github.io.sublime-workspace
-package.json
 _config.yml
+/.tmp
