@@ -70,7 +70,7 @@ gulp.task('gh-pages', function () {
 });
 
 gulp.task('build', ['html', 'styles', 'images'], function() {
-  gulp.src(['.tmp/**/*', 'app/files/**/*', paths.vendor])
+  gulp.src(['.tmp/**/*', 'app/files/**/*', paths.vendor, 'CNAME'])
     .pipe(gulp.dest('dist'))
 })
 
