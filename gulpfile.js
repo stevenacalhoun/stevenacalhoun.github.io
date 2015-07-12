@@ -9,16 +9,14 @@ var gulp = require('gulp'),
         app:      'app',
         html:     'app/**/*.html',
         styles:   'app/styles/**/*.scss',
+        images:   'app/images/**/*.{png,gif,jpg,jpeg,svg}',
+        vendor:   'vendor'
       };
 
 gulp.task('html', function (cb) {
-  var spawn  = require('child_process').spawn,
-      jekyll = spawn('jekyll', ['build', '-q', '-s', paths.app, '-d', '.tmp'], { stdio: 'inherit' });
-
-  jekyll.on('exit', function (code) {
-    cb(code === 0 ? null : 'ERROR: Jekyll process exited with code: ' + code);
-    browserSync.reload();
-  });
+  return gulp.src(paths.html)
+    .pipe(gulp.dest('.tmp'))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('styles', function () {
@@ -32,6 +30,16 @@ gulp.task('styles', function () {
     .pipe(browserSync.reload({ stream: true }));
 });
 
+gulp.task('images', function () {
+  return gulp.src(paths.images)
+    .pipe($.imagemin({
+      progressive: true,
+      svgoPlugins: [{ removeViewBox: false }],
+      use: []
+    }))
+    .pipe(gulp.dest('dist/images'));
+});
+
 // Watch Files For Changes
 gulp.task('watch', function() {
     gulp.watch(paths.html, ['html'])
@@ -39,7 +47,7 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['html', 'styles', 'watch']);
+gulp.task('default', ['styles', 'watch', 'images']);
 
 gulp.task('browser-sync', ['html', 'styles'], function () {
   browserSync({
@@ -53,6 +61,11 @@ gulp.task('browser-sync', ['html', 'styles'], function () {
     }
   });
 });
+
+gulp.task('build', ['html', 'styles', 'images'], function() {
+  gulp.src(['.tmp/**/*', 'app/files/**/*', paths.vendor])
+    .pipe(gulp.dest('dist'))
+})
 
 gulp.task('serve', function () {
   runSequence(['browser-sync', 'watch']);
