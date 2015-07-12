@@ -10,7 +10,8 @@ var gulp = require('gulp'),
         html:     'app/**/*.html',
         styles:   'app/styles/**/*.scss',
         images:   'app/images/**/*.{png,gif,jpg,jpeg,svg}',
-        vendor:   'vendor'
+        vendor:   'vendor',
+        files:    'app/files/**/*'
       };
 
 gulp.task('html', function (cb) {
@@ -38,6 +39,11 @@ gulp.task('images', function () {
       use: []
     }))
     .pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('files', function() {
+  return gulp.src(paths.files)
+    .pipe(gulp.dest('dist/files'));
 });
 
 // Watch Files For Changes
@@ -69,8 +75,8 @@ gulp.task('gh-pages', function () {
     }))
 });
 
-gulp.task('build', ['html', 'styles', 'images'], function() {
-  gulp.src(['.tmp/**/*', 'app/files/**/*', paths.vendor, 'CNAME'])
+gulp.task('build', ['html', 'styles', 'images', 'files'], function() {
+  gulp.src(['.tmp/**/*', paths.vendor, 'CNAME'])
     .pipe(gulp.dest('dist'))
 })
 
