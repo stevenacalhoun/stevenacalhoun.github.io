@@ -1,71 +1,80 @@
-/* style.scss */
+@import "../../vendor/bourbon/dist/bourbon";
+
+$background-color: #000000;
+$primary-color: #555555;
+$secondary-color: #f47321;
+$hover-color: #005580;
+
+$font-family: 'Lato';
+$font-weight: 300;
+
+$picture-size: 350px;
+
+$default-font-size: 20px;
+$header-font-size: $default-font-size*2.25;
+
+body {
+  display: block;
+  margin: 0;
+  font-family: $font-family;
+  font-size: $default-font-size;
+  font-weight: $font-weight;
+  color: $primary-color;
+  text-align: center;
+  line-height: 30px;
+}
+
 a {
-  color: #f47321;
+  color: $secondary-color;
   text-decoration: none;
   transition: 0.1s;
   -ms-transition: 0.1s;
   -moz-transition: 0.1s;
   -webkit-transition: 0.1s;
-}
-  a:hover {
-    color: #005580;
-    border-bottom: 2px solid #005580;
+  &:hover {
+    color: $hover-color;
+    border-bottom: 2px solid $hover-color;
     padding-bottom: 1px;
   }
+}
+
+p {
+  margin: 0;
+}
 
 h1 {
-  font-size: 45px;
-  letter-spacing: 1px;
-  font-weight: 300;
+  font-size: $header-font-size;
+  font-weight: $font-weight;
 }
 
-h2 {
-  font-size: 20px;
-  font-style: italic;
-  letter-spacing: 1px;
-  font-weight: 200;
+ul {
+  padding: 0;
 }
 
-.body {
-  display: block;
-  margin: 0;
-  font-family: "Lato";
-  color: #555555;
+li {
+  display: inline-block;
+  margin: 0 15px;
 }
 
 .profile {
   margin-left: auto;
   margin-right: auto;
+  height: auto;
   margin-top: 100px;
   max-width: 800px;
 }
 
-.name {
-  text-align: center;
-  padding: 2px 20px 0px 20px;
-  line-height: 50px;
+.bio {
+  margin: 0 20px 0 20px;
+}
+
+.picture {
+  margin: 15px auto 15px auto;
+  @include size($picture-size);
+  @include retina-image('../images/profile', $picture-size);
 }
 
 .bio {
-  font-size: 20px;
-  line-height: 30px;
-  letter-spacing: 1px;
-  font-weight: 300;
-  padding: 0 20px 0 20px; 
+  text-align: left;
+  height: auto;
 }
-
-.social {
-  text-align: center;
-  font-size: 20px;
-  padding: 5px;
-  line-height: 35px;
-}
-  .social ul {
-    padding: 0;
-    font-weight: 400;
-    letter-spacing: 1px;
-  }
-    .social ul li {
-      display: inline-block;
-      margin: 0 15px;
-    }
