@@ -1,6 +1,6 @@
 @import "../../vendor/bourbon/dist/bourbon";
 
-$background-color: #000000;
+$background-color: #F8F8F8;
 $primary-color: #555555;
 $secondary-color: #f47321;
 $hover-color: #005580;
@@ -9,6 +9,8 @@ $font-family: 'Lato';
 $font-weight: 300;
 
 $picture-size: 350px;
+$picture-height: 960px;
+$picture-widht: 12px;
 
 $default-font-size: 20px;
 $header-font-size: $default-font-size*2.25;
@@ -22,6 +24,7 @@ body {
   color: $primary-color;
   text-align: center;
   line-height: 30px;
+  background-color: $background-color;
 }
 
 a {
@@ -78,7 +81,7 @@ li {
 .picture {
   margin: 15px auto 15px auto;
   @include size($picture-size);
-  @include retina-image('../images/profile', $picture-size);
+  @include retina-image('../images/icon', $picture-size);
 }
 
 .bio {
