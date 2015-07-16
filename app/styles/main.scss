@@ -9,8 +9,10 @@ $font-family: 'Lato';
 $font-weight: 300;
 
 $picture-size: 350px;
-$picture-height: 960px;
-$picture-widht: 12px;
+$picture-height: 180px;
+$picture-width: 104px;
+$picture-box-size: $picture-height*1.1;
+$picture-margin: ($picture-box-size - $picture-height)/2;
 
 $default-font-size: 20px;
 $header-font-size: $default-font-size*2.25;
@@ -78,10 +80,19 @@ li {
   margin: 0 20px 0 20px;
 }
 
+.pictureBox {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100%;
+  border: 1px solid black;
+  @include size($picture-box-size);
+}
+
 .picture {
-  margin: 15px auto 15px auto;
-  @include size($picture-size);
-  @include retina-image('../images/icon', $picture-size);
+  margin: $picture-margin auto $picture-margin auto;
+
+  @include size($picture-width $picture-height);
+  @include retina-image('../images/icon', $picture-width $picture-height);
 }
 
 .bio {
