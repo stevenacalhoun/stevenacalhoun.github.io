@@ -9,6 +9,7 @@ var gulp = require('gulp'),
         app:      'app',
         html:     'app/**/*.html',
         styles:   'app/styles/**/*.scss',
+        scripts:  'app/scripts/**/*.js',
         images:   'app/images/**/*.{png,gif,jpg,jpeg,svg}',
         vendor:   'vendor',
         files:    'app/files/**/*'
@@ -31,6 +32,14 @@ gulp.task('styles', function () {
     .pipe(browserSync.reload({ stream: true }));
 });
 
+gulp.task('scripts', function () {
+  return gulp.src(paths.scripts)
+    .pipe($.jshint('.jshintrc'))
+    .pipe($.jshint.reporter('default'))
+    .pipe(gulp.dest('.tmp/scripts'))
+    .pipe(browserSync.reload({ stream: true }));
+});
+
 gulp.task('images', function () {
   return gulp.src(paths.images)
     .pipe($.imagemin({
@@ -50,12 +59,13 @@ gulp.task('files', function() {
 gulp.task('watch', function() {
     gulp.watch(paths.html, ['html'])
     gulp.watch(paths.styles, ['styles']);
+    gulp.watch(paths.scripts, ['scripts']);
 });
 
 // Default Task
 gulp.task('default', ['styles', 'watch', 'images']);
 
-gulp.task('browser-sync', ['html', 'styles'], function () {
+gulp.task('browser-sync', ['html', 'styles', 'scripts'], function () {
   browserSync({
     notify: false,
     port: 9000,
@@ -75,7 +85,7 @@ gulp.task('gh-pages', function () {
     }))
 });
 
-gulp.task('build', ['html', 'styles', 'images', 'files'], function() {
+gulp.task('build', ['html', 'styles', 'scripts', 'images', 'files'], function() {
   gulp.src(['.tmp/**/*', paths.vendor, 'CNAME'])
     .pipe(gulp.dest('dist'))
 })
