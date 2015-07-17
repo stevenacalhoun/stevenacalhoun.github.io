@@ -9,8 +9,8 @@ $font-family: 'Lato';
 $font-weight: 300;
 
 $picture-size: 350px;
-$picture-height: 180px;
-$picture-width: 104px;
+$picture-height: 122px;
+$picture-width: 70px;
 $picture-box-size: $picture-height*1.1;
 $picture-margin: ($picture-box-size - $picture-height)/2;
 
@@ -72,7 +72,7 @@ li {
 
 @media screen and (max-width: 750px) {
   .profile {
-    margin-top: 0;
+    margin-top: 25px;
   }
 }
 
@@ -84,7 +84,7 @@ li {
   margin-left: auto;
   margin-right: auto;
   border-radius: 100%;
-  border: 1px solid black;
+  border: 2px solid $primary-color;
   @include size($picture-box-size);
 }
 
