@@ -62,10 +62,16 @@ gulp.task('watch', function() {
     gulp.watch(paths.scripts, ['scripts']);
 });
 
+// Copy all other files to dist directly
+gulp.task('copy', function() {
+ gulp.src('favicon.ico', {cwd: paths.app})
+ .pipe(gulp.dest(".tmp"));
+});
+
 // Default Task
 gulp.task('default', ['styles', 'watch', 'images']);
 
-gulp.task('browser-sync', ['html', 'styles', 'scripts'], function () {
+gulp.task('browser-sync', ['html', 'styles', 'scripts', 'copy'], function () {
   browserSync({
     notify: false,
     port: 9000,

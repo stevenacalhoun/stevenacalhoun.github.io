@@ -17,6 +17,9 @@ $picture-margin: ($picture-box-size - $picture-height)/2;
 $default-font-size: 20px;
 $header-font-size: $default-font-size*2.25;
 
+$preview-width: 412px;
+$preview-height: 273px;
+
 body {
   display: block;
   margin: 0;
@@ -63,6 +66,12 @@ li {
 }
 
 .profile {
+  -webkit-animation: fadein 0.4s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 0.4s; /* Firefox < 16 */
+      -ms-animation: fadein 0.4s; /* Internet Explorer */
+       -o-animation: fadein 0.4s; /* Opera < 12.1 */
+          animation: fadein 0.4s;
+
   margin-left: auto;
   margin-right: auto;
   height: auto;
@@ -98,4 +107,57 @@ li {
 .bio {
   text-align: left;
   height: auto;
+}
+
+.projects {
+  overflow: auto;
+}
+
+.project {
+  overflow: auto;
+  .preview {
+    @include size($preview-width $preview-height);
+    display: inline-block;
+    float: left;
+  }
+  .description {
+    display: inline-block;
+    float: right;
+    text-align: left;
+    padding-left: 20px;
+    width: calc(100% - #{$preview-width} - 20px);
+  }
+}
+
+#secon-preview {
+  @include retina-image('../images/secon', $preview-width $preview-height)
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
