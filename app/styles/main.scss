@@ -41,7 +41,6 @@ a {
   -webkit-transition: 0.1s;
   &:hover {
     color: $hover-color;
-    border-bottom: 2px solid $hover-color;
     padding-bottom: 1px;
   }
 }
