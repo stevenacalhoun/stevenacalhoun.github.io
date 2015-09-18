@@ -102,5 +102,5 @@ gulp.task('serve', function () {
 
 gulp.task('deploy', function () {
   production = true;
-  runSequence('build', 'gh-pages');
+  runSequence(['build'], 'gh-pages');
 });
