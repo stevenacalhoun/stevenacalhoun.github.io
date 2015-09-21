@@ -4,8 +4,7 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     del = require('del');
 
-  var production = false,
-      paths = {
+  var paths = {
         app:      'app',
         html:     'app/**/*.html',
         styles:   'app/styles/**/*.scss',
@@ -100,7 +99,6 @@ gulp.task('serve', function () {
   runSequence(['browser-sync', 'watch']);
 });
 
-gulp.task('deploy', function () {
-  production = true;
-  runSequence(['build'], 'gh-pages');
+gulp.task('deploy',['build'], function () {
+  runSequence('gh-pages');
 });
