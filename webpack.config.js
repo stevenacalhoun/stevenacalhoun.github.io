@@ -41,6 +41,7 @@ module.exports = {
       new CopyWebpackPlugin([
         { from: 'app/index.html' },
         { from: 'app/files/Steven\ Calhoun\ Resume.pdf', to: 'files/Steven\ Calhoun\ Resume.pdf' },
+        { from: 'CNAME' },
       ])
     ]
 };
