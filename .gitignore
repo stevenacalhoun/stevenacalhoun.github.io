@@ -1,3 +1,4 @@
+# Mac stuff
 .DS_Store
 .DS_Store?
 ._*
@@ -5,10 +6,10 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-.sass-cache
 
+# Build folders
 node_modules
-.tmp
-dist
-vendor
-.publish
+build
+
+# npm stuff
+*.log

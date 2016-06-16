@@ -1,4 +1,4 @@
-@import "../../vendor/bourbon/dist/bourbon";
+@import 'bourbon';
 
 $background-color: #F8F8F8;
 $primary-color: #555555;
@@ -125,10 +125,6 @@ li {
     padding-left: 20px;
     width: calc(100% - #{$preview-width} - 20px);
   }
-}
-
-#secon-preview {
-  @include retina-image('../images/secon', $preview-width $preview-height)
 }
 
 @keyframes fadein {

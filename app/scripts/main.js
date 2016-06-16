@@ -1,2 +1,3 @@
-$( document ).ready(function() {
-});
+'use strict';
+
+require('../styles/main.scss');
