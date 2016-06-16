@@ -40,6 +40,7 @@ module.exports = {
     plugins: [
       new CopyWebpackPlugin([
         { from: 'app/index.html' },
+        { from: 'app/favicon.ico' },
         { from: 'app/files/Steven\ Calhoun\ Resume.pdf', to: 'files/Steven\ Calhoun\ Resume.pdf' },
         { from: 'CNAME' },
       ])
