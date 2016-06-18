@@ -4,7 +4,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "webpack -p --progress --colors",
-    "dev": "webpack-dev-server --devtool eval --progress --colors --hot",
+    "dev": "webpack-dev-server --host 0.0.0.0 --devtool eval --progress --colors --hot",
     "deploy": "npm run build && gh-pages -d build -b master"
   },
   "repository": {
