@@ -1,7 +1,7 @@
 var path = require('path');
 var bourbon = require('node-bourbon').includePaths;
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 const PATHS = {
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'build'),
@@ -38,9 +38,11 @@ module.exports = {
       filename: 'bundle.js',
     },
     plugins: [
+      new HtmlWebpackPlugin({
+        favicon: 'app/favicon.ico',
+        template: './app/index.html'
+      }),
       new CopyWebpackPlugin([
-        { from: 'app/index.html' },
-        { from: 'app/favicon.ico' },
         { from: 'app/files/Steven\ Calhoun\ Resume.pdf', to: 'files/Steven\ Calhoun\ Resume.pdf' },
         { from: 'CNAME' },
       ])
