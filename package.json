@@ -4,21 +4,20 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "webpack -p --progress --colors",
-    "dev": "webpack-dev-server --host 0.0.0.0 --content-base build --devtool eval --progress --colors --hot",
+    "dev": "webpack-dev-server  --inline --content-base build --devtool eval --colors --hot",
     "deploy": "npm run build && gh-pages -d build -b master"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/stevenacalhoun/stevenacalhoun.github.io"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "jquery": "^3.0.0",
     "copy-webpack-plugin": "^1.1.1",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
     "gh-pages": "^0.11.0",
+    "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.21.0",
     "node-bourbon": "^4.2.8",
     "node-sass": "^3.4.2",

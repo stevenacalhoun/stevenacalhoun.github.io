@@ -12,9 +12,7 @@ const PATHS = {
 
 module.exports = {
     entry: [
-      path.resolve(PATHS.scripts, 'main.js'),
-      'webpack/hot/dev-server',
-      'webpack-dev-server/client?http://localhost:8080',
+      path.resolve(PATHS.scripts, 'main.js')
     ],
     module: {
       loaders: [
@@ -40,11 +38,11 @@ module.exports = {
     plugins: [
       new HtmlWebpackPlugin({
         favicon: 'app/favicon.ico',
-        template: './app/index.html'
+        template: 'html!./app/index.html'
       }),
       new CopyWebpackPlugin([
         { from: 'app/files/Steven\ Calhoun\ Resume.pdf', to: 'files/Steven\ Calhoun\ Resume.pdf' },
-        { from: 'CNAME' },
+        { from: 'CNAME', to: 'CNAME'},
       ])
     ]
 };

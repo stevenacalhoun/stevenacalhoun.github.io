@@ -1,27 +1,32 @@
 @import 'bourbon';
 
+// Colors
 $background-color: #F8F8F8;
 $primary-color: #555555;
 $secondary-color: #f47321;
 $hover-color: #005580;
 
+// Font family/weight
 $font-family: 'Lato';
 $font-weight: 300;
 
-$picture-size: 350px;
-$picture-height: 122px;
-$picture-width: 70px;
-$picture-box-size: $picture-height*1.1;
+$content-width: 800px;
+
+// Picture sizes
+$header-height: 71px;
+$picture-size: $header-height - 14;
+$picture-height: $picture-size;
+$picture-width: 0.573770492*$picture-height;
+$picture-box-size: $picture-size + 7;
 $picture-margin: ($picture-box-size - $picture-height)/2;
 
+// Font sizes
 $default-font-size: 20px;
 $header-font-size: $default-font-size*2.25;
 
-$preview-width: 412px;
-$preview-height: 273px;
-
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 
+// Basic styling
 body {
   display: block;
   margin: 0;
@@ -35,6 +40,7 @@ body {
 }
 
 a {
+  cursor: pointer;
   color: $secondary-color;
   text-decoration: none;
   transition: 0.1s;
@@ -47,18 +53,9 @@ a {
   }
 }
 
-p {
-  margin: 0;
-}
-
-h1 {
-  font-size: $header-font-size;
-  font-weight: $font-weight;
-  line-height: $header-font-size;
-}
-
 ul {
   padding: 0;
+  margin: 0;
 }
 
 li {
@@ -66,6 +63,53 @@ li {
   margin: 0 15px;
 }
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+p {
+  text-align: justify;
+
+}
+
+.separator {
+  width: 80%;
+  height: 1px;
+  background-color: grey;
+  margin: 40px auto;
+}
+
+.left {
+  float:left;
+}
+
+.right {
+  float: right;
+}
+
+// Main styling
 .profile {
   -webkit-animation: fadein 0.4s; /* Safari, Chrome and Opera > 12.1 */
      -moz-animation: fadein 0.4s; /* Firefox < 16 */
@@ -77,58 +121,81 @@ li {
   margin-right: auto;
   height: auto;
   margin-top: 50px;
-  max-width: 800px;
+  max-width: $content-width;
 }
 
+// Header styling
+.header {
+  padding-top: 20px;
+  margin: 0 auto;
+  height: $header-height;
+  max-width: $content-width*1.25;
+}
+
+.header-section {
+  height: $header-height;
+  line-height: $header-height;
+}
+
+.name {
+  padding-left: 30px;
+}
+
+.pictureBox {
+  border-radius: 100%;
+  border: 2px solid $primary-color;
+  @include size($picture-box-size);
+  display: inline-block;
+}
+
+.picture {
+  margin: $picture-margin auto $picture-margin auto;
+
+  background-size: $picture-width $picture-height;
+  background-image: url('../images/icon.png');
+  @include size($picture-width $picture-height)
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    background-image: url('../images/icon_2x.png');
+  }
+}
+
+// Nav styling
+.nav {
+}
+
+.selected {
+  border-bottom: 1px solid $secondary-color;
+}
+
+.tab-link {
+  margin: 0px 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+// Project styling
+.project-section {
+  width: 100%;
+  overflow: auto;
+}
+
+.project-photo {
+  width: 100%;
+  height: 400px;
+}
+
+// Margin change for small screens
 @media screen and (max-width: 750px) {
   .profile {
     margin-top: 25px;
   }
 }
 
-.pictureBox {
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 100%;
-  border: 2px solid $primary-color;
-  @include size($picture-box-size);
-}
-
-.picture {
-  margin: $picture-margin auto $picture-margin auto;
-
-  @include size($picture-width $picture-height);
-  @include retina-image('../images/icon', $picture-width $picture-height);
-}
-
-.bio {
-  height: auto;
-  margin: 0 auto;
-  max-width: 32em;
-  padding: 0 1rem;
-  text-align: justify;
-}
-
-.projects {
-  overflow: auto;
-}
-
-.project {
-  overflow: auto;
-  .preview {
-    @include size($preview-width $preview-height);
-    display: inline-block;
-    float: left;
-  }
-  .description {
-    display: inline-block;
-    float: right;
-    text-align: left;
-    padding-left: 20px;
-    width: calc(100% - #{$preview-width} - 20px);
-  }
-}
-
+// Animation
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
