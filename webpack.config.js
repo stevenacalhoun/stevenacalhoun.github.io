@@ -1,5 +1,4 @@
 var path = require('path');
-var bourbon = require('node-bourbon').includePaths;
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const PATHS = {
@@ -18,7 +17,7 @@ module.exports = {
       loaders: [
         {
           test: /\.scss$/,
-          loader: "style!css!sass?includePaths[]=" + bourbon,
+          loader: "style!css!sass",
           include: PATHS.styles
         },
         {
@@ -27,7 +26,7 @@ module.exports = {
         },
         {
           test: /\:.html$/,
-          loader: "raw-loader"
+          loader: "html-loader"
         }
       ]
     },
@@ -42,7 +41,7 @@ module.exports = {
     plugins: [
       new HtmlWebpackPlugin({
         favicon: 'app/favicon.ico',
-        template: 'html!./app/index.html'
+        title: "Steven Calhoun"
       }),
       new CopyWebpackPlugin([
         { from: 'app/files/Steven\ Calhoun\ Resume.pdf', to: 'files/Steven\ Calhoun\ Resume.pdf' },
