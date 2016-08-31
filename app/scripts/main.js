@@ -1,7 +1,17 @@
+// Temporary check for old content
+var type = window.location.hash.substr(1);
+if (type == "new") {
+  var contentId = "content";
+}
+else  {
+  var contentId = "oldContent";
+}
+
+var content = require('html!../'+contentId+'.html');
+
 // Load in content
-var content = require('html!../content.html');
 document.body.innerHTML = content;
-document.getElementById("content").className += " fadein";
+document.getElementById(contentId).className += " fadein";
 
 // Load in css
 require('../styles/main.scss');
