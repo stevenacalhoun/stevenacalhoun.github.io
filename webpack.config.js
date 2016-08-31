@@ -41,7 +41,8 @@ module.exports = {
     plugins: [
       new HtmlWebpackPlugin({
         favicon: 'app/favicon.ico',
-        title: "Steven Calhoun"
+        template: './app/index.html',
+        title: 'Steven Calhoun'
       }),
       new CopyWebpackPlugin([
         { from: 'app/files/Steven\ Calhoun\ Resume.pdf', to: 'files/Steven\ Calhoun\ Resume.pdf' },

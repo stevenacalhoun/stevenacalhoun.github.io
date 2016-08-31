@@ -4,7 +4,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "webpack -p --progress --colors",
-    "dev": "webpack-dev-server  --inline --content-base build --colors --hot",
+    "dev": "webpack-dev-server  --inline --content-base build --colors --hot --host 0.0.0.0 --port 3000",
     "deploy": "npm run build && gh-pages -d build -b master"
   },
   "repository": {
