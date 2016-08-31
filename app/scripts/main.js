@@ -1,6 +1,7 @@
 // Load in content
 var content = require('html!../content.html');
-document.body.innerHTML = content
+document.body.innerHTML = content;
+document.getElementById("content").className += " fadein";
 
 // Load in css
 require('../styles/main.scss');
@@ -16,11 +17,11 @@ function showTab() {
   document.getElementById(this.id).className += " selected";
 
   // Hide everything
-  document.getElementById("about-section").style.display = 'none';
-  document.getElementById("work-section").style.display = 'none';
+  document.getElementById("about-section").className = 'profile-section hidden';
+  document.getElementById("work-section").className = 'profile-section hidden';
 
-  // Show new tab
-  document.getElementById(sectionId).style.display = 'block';
+  // Fade in new tab
+  document.getElementById(sectionId).className += 'profile-section fadein';
 }
 
 // Setup click event
