@@ -21,7 +21,7 @@ module.exports = {
           include: PATHS.styles
         },
         {
-          test: /\.(png|gif)$/,
+          test: /\.(png|gif|jpg)$/,
           loader: "file-loader?name=img/img-[hash:6].[ext]"
         },
         {
