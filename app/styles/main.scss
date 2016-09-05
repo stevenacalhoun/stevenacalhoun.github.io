@@ -85,18 +85,11 @@ h2 {
 
 h3 {
   font-size: $default-font-size*1.5;
+}
+
+h4 {
+  font-size: $default-font-size;
   margin: 15px 0px;
-}
-
-h4 {
-  font-size: $default-font-size;
-  margin: 5px 0px;
-  font-style: italic;
-}
-
-h4 {
-  font-size: $default-font-size;
-  margin: 5px 0px;
   font-style: italic;
 }
 
@@ -109,7 +102,7 @@ p {
   width: 90%;
   height: 1px;
   background-color: $primary-color;
-  margin: 40px auto;
+  margin: 25px auto;
 }
 
 .centered {
@@ -198,6 +191,10 @@ p {
 // Project
 .project {
   overflow: auto;
+}
+
+.project-media {
+  margin: 5px 0;
 }
 
 .project-photo {
