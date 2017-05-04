@@ -142,7 +142,7 @@ p {
 .header {
   margin: 0 auto;
   max-width: $header-width;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .header-section {
