@@ -16,6 +16,11 @@ module.exports = {
     module: {
       loaders: [
         {
+          test: /\.jsx?/,
+          loader: "babel-loader",
+          include: PATHS.scripts
+        },
+        {
           test: /\.scss$/,
           loader: "style!css!sass",
           include: PATHS.styles
