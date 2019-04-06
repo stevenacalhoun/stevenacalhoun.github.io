@@ -2,147 +2,23 @@
   <!-- Header -->
   <div class="header">
     <!-- Picture -->
-    <div class="header-section left">
+    <div class="header-section">
       <div class="profile-picture-container">
         <div class="profile-picture"></div>
       </div>
     </div>
-
-    <!-- Name -->
-    <div class="header-section left">
-      <div class="name"><h1>Steven Calhoun</h1></div>
-    </div>
-
-    <!-- Navigation -->
-    <div class="header-section right">
-      <div class="nav">
-        <span id="about-link" class="tab-link selected"><a>About</a></span>
-        <span id="work-link" class="tab-link"><a>Work</a></span>
-      </div>
+    <div class="header-section">
+      <h1>Steven Calhoun</h1>
     </div>
   </div>
 
-  <!-- Profile Content -->
+  <!-- Profile -->
   <div class="profile">
-    <!-- About -->
-    <div id="about-section" class="profile-section">
-      <h2>About Me</h2>
-      <p>
-        As an engineer I love two things: problem solving and learning. Currently I am employed at FireEye, Inc. as I pursue my Master's degree in Computer Science at the Georgia Institute of Technology. Both school and work have given me opportunities to hone my skills as a Software Engineer. With a Computer Engineering Bachelor's degree and a Computer Science Graphics Master's degree, I believe I am quite versatile in the world of software engineering.
-      </p>
-      <p>
-        One of my newly developed passions is space exploration. This field represents an awesome engineering challenge and the chance to learn and work with engineers of different disciplines. I am hoping to one day work in this field and I believe my bakground would enable me to do so.
-      </p>
-    </div>
-
-    <!-- Work -->
-    <div id="work-section" class="profile-section hidden">
-      <h2>Past Projects</h2>
-      <p class="centered">
-        These are a few of the cool projects I've worked on in the past.
-      </p>
-      <div class="separator"></div>
-
-      <!-- SECON -->
-      <div class="project">
-        <h3>SECON</h3>
-        <h4>IEEE Robotics Competition</h4>
-        <div class="project-media">
-          <div class="video-container">
-            <iframe class="video" src="https://www.youtube.com/embed/7GHeTlrg33c" allowfullscreen></iframe>
-          </div>
-        </div>
-        <p>
-          SECON was my senior design project for my undergraduate CPE program. The IEEE hosts a robotics competition every year at their SouthEastern Conference. The year that I competed the challenge was to design and build an autonomous robot that could navigate a course and play games along the way. I was part of a team of six, and the project lasted a year. My primary role on the team was to develop the software to navigate and play each game. I designed an architecture to allow simple usage of robotic elements then used that architecture to accomplish the higher level tasks.
-        </p>
-        <h4>Skills: Embedded Programming, Microprocessor Development, Robotics</h4>
-        <ul>
-          <li><a href="https://github.com/bryceamacker/senior_design2015">GitHub</a></li>
-          <li><a href="https://design.ece.msstate.edu/2014/team_amacker/">Project Site</a></li>
-        </ul>
-      </div>
-
-      <div class="separator"></div>
-
-      <!-- Music Thermometer -->
-      <div class="project">
-        <h3>Music Thermometer</h3>
-        <h4>Information Visualization Semester Project</h4>
-        <div class="project-media">
-          <div class="project-media">
-            <div class="project-photo"><img src="images/music_thermometer.png"></img></div>
-          </div>
-        </div>
-        <p>
-          Music Thermometer was a semester long group project for Information Visualization. In this project, we compare the music markets of the US and the UK. This application uses Top 100 Charts data to display the popularity of different artists over time in the two countries. Users can view general trends of artists as well as information about specific songs. We also used Spotify data to play previews of songs and show album artwork of songs.
-        </p>
-        <h4>Skills: HTML/CSS/JS, D3, Ruby on Rails</h4>
-        <ul>
-          <li><a href="http://stevenacalhoun.me/music-thermometer-vis/">Live Web Application</a></li>
-          <li><a href="https://github.com/stevenacalhoun/music-thermometer-vis">Frontend Site GitHub Repo</a></li>
-          <li><a href="https://github.com/stevenacalhoun/music-thermometer-server">Rails Server GitHub Repo</a></li>
-        </ul>
-      </div>
-
-      <div class="separator"></div>
-
-      <!-- Frackers -->
-      <div class="project">
-        <h3>Frackers</h3>
-        <h4>Investigation of Hydraulic Fracking Pollution</h4>
-        <div class="project-media">
-          <div class="project-photo"><img src="images/frackers.png"></img></div>
-        </div>
-        <p>
-          Frackers was a semester long group project for my Data and Visual Analytics class. The goal of this project was to investigate the relationship between hydraulic fracking for natural gas and water pollution. My team of four used large amounts of publicly available data from government and non-profit websites. We had to clean the data, analyze the data, then visualize the data. My responsibility was to design and develop the visualization. I created a simple Ruby on Rails application to serve our data in JSON format. This JSON data was served to a web app that displayed a heat map of ground water pollution overlaid with fracking sites.
-        </p>
-        <h4>Skills: HTML/CSS/JS, D3, Ruby on Rails</h4>
-        <ul>
-          <li><a href="https://github.com/stevenacalhoun/frackers">Frontend Site GitHub Repo</a></li>
-          <li><a href="https://github.com/stevenacalhoun/frackers-server">Rails Server GitHub Repo</a></li>
-        </ul>
-      </div>
-
-      <div class="separator"></div>
-
-      <!-- Geoplay -->
-      <div class="project">
-        <h3>Geoplay</h3>
-        <h4>2D Platforming Game</h4>
-        <div class="project-media">
-          <div class="project-photo"><img src="images/geoplay.gif"></img></div>
-        </div>
-        <p>
-          Geoplay is a small 2D platforming game I created for a short Game Design course. The game has a simple objective: collect the triangles while avoiding various types of harmful rain drops. Different powerups spawn randomly to help the player while each level gets progressively more difficult in terms of level design and frequency of rain drops. The game was built in Python, using Pygame to help with the graphical needs.
-        </p>
-        <h4>Skills: Python/Pygame, 2D Game Design</h4>
-        <ul>
-          <li><a href="https://github.com/stevenacalhoun/geoplay">GitHub Repo</a></li>
-        </ul>
-      </div>
-
-      <div class="separator"></div>
-
-      <!-- Water Droplet Photography -->
-      <div class="project">
-        <h3>Water Droplet Photography</h3>
-        <h4>High Speed Photography of Water Droplet Collisions</h4>
-        <div class="project-media">
-          <div class="project-photo"><img  src="images/water_droplet.jpg"></img></div>
-        </div>
-        <p>
-          This was my final project for a Computational Photography class. This was an easy and common project but still had some cool results. The goal was to use a Raspberry Pi to control a camera and a solenoid valve in order to photograph droplets of water interacting with each other. The code and setup was relatively simple, but finding the precise time delays between each step in the process took a lot of time. As a result, I was able to capture many interesting photos using water and milk of different colors.
-        </p>
-        <h4>Skills: RPi Development, Photography</h4>
-        <ul>
-          <li><a href="https://github.com/stevenacalhoun/comp-photo-project">GitHub Repo</a></li>
-          <li><a href="https://www.icloud.com/sharedalbum/#B0T5nhQSTPopTr">Photo Album</a></li>
-        </ul>
-      </div>
-
-      <div class="separator"></div>
-
-    </div>
+    <p>
+      I'm Steven Calhoun, an engineer and a problem solver. I currenlty work for
+      FireEye Inc. as a test engineer for the Endpoint Protection product.
+      Feel free contact me or check out my work by any of the following methods.
+    </p>
   </div>
 
   <!-- Contact Footer -->

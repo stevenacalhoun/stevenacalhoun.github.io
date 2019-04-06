@@ -18,8 +18,8 @@ $header-font-size: $default-font-size*2.25;
 
 // Content sizes
 $header-width: 1000px;
-$profile-width: $header-width*0.8;
-$header-height: 70px;
+$profile-width: 500px;
+$header-height: 80px;
 
 // Profile picture sizes
 $profile-picture-border-width: 2px;
@@ -60,13 +60,9 @@ ul {
 }
 
 li {
-  display: inline-block;
-  margin: 0 15px;
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
+display: inline-block;
+margin: 0 15px;
+list-style: none;
 }
 
 h1, h2, h3, h4 {
@@ -98,27 +94,12 @@ p {
   margin: 15px 0px;
 }
 
-.separator {
-  width: 90%;
-  height: 1px;
-  background-color: $primary-color;
-  margin: 25px auto;
-}
-
-.centered {
-  text-align: center;
-}
-
 .left {
   float:left;
 }
 
 .right {
   float: right;
-}
-
-.hidden {
-  display: none;
 }
 
 // Main
@@ -134,10 +115,6 @@ p {
   overflow: auto;
 }
 
-.profile-section {
-  overflow: auto;
-}
-
 // Header
 .header {
   margin: 0 auto;
@@ -146,8 +123,7 @@ p {
 }
 
 .header-section {
-  height: $header-height;
-  line-height: $header-height;
+  margin: 20px 0px;
   @media (max-width: 600px) {
     float: none;
   }
@@ -174,47 +150,6 @@ p {
   (min-resolution: 192dpi) {
     background-image: url('../images/profile_2x.png');
   }
-}
-
-// Nav
-.nav {
-}
-
-.selected {
-  border-bottom: 1px solid $secondary-color;
-}
-
-.tab-link {
-  margin: 0px 10px;
-}
-
-// Project
-.project {
-  overflow: auto;
-}
-
-.project-media {
-  margin: 5px 0;
-}
-
-.project-photo {
-  width: 100%;
-}
-
-.video-container {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
-}
-
-.video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
 }
 
 // Animation
